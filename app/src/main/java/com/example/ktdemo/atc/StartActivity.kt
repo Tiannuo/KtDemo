@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ktdemo.databinding.ActStartBinding
+import com.example.ktdemo.mvp2.act.Mvp2Activity
 
 class StartActivity : AppCompatActivity() {
 
@@ -13,7 +14,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActStartBinding.inflate(layoutInflater);
         setContentView(binding!!.root)
-        binding!!.iv.setOnClickListener {v->
+        binding!!.ivStart.setOnClickListener {v->
             onClick(v);
         }
 
@@ -22,7 +23,7 @@ class StartActivity : AppCompatActivity() {
 
     private fun onClick(v: View?) {
         var intent = Intent()
-        intent.setClass(this,MvpActivity::class.java);
+        intent.setClass(this,Mvp2Activity::class.java);
         startActivity(intent)
     }
 

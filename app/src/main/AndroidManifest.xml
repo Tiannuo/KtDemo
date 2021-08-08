@@ -24,6 +24,9 @@
         <activity android:name=".atc.SkipActivity"/>
 
         <activity android:name=".atc.MvpActivity"/>
+        <activity android:name=".mvp2.act.Mvp2Activity"
+            android:label="猫咪"
+            />
     </application>
 
 </manifest>
