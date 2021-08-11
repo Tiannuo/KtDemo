@@ -26,9 +26,9 @@ class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding>(),Mv
 
     override fun <T> setData(data: T) {
         println("====$data")
-        var model: T = data
+        var model:TestModel = data as TestModel
 
-        getBinding()!!.btnGetData.text = "$data"
+        getBinding()!!.tv.text = "$data"
     }
 
     override fun setError(err: String) {

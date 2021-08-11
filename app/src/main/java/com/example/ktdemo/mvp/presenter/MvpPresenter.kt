@@ -9,15 +9,11 @@ import com.example.ktdemo.mvp.view.MvpView
 
 class MvpPresenter : BasePresenter<MvpView>() {
 
-    fun setData(data: String) {
-        getBaseView().setData(data)
-    }
-
     fun getTest() {
         HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getTest(),
             object : ResponseListener<BaseModel<TestModel>> {
                 override fun onSuccess(t: BaseModel<TestModel>) {
-                    getBaseView().setData(t)
+                    getBaseView().setData(t.result)
                 }
 
                 override fun onFail(msg: String) {
