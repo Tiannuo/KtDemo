@@ -1,2 +1,3 @@
 rootProject.name = "KtDemo"
 include ':app'
+include ':lib'

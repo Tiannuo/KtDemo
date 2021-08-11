@@ -2,6 +2,8 @@ package com.example.ktdemo.atc
 
 import com.example.ktdemo.base.BaseActivity
 import com.example.ktdemo.databinding.ActivityMvpBinding
+import com.example.ktdemo.mvp.model.BaseModel
+import com.example.ktdemo.mvp.model.TestModel
 import com.example.ktdemo.mvp.presenter.MvpPresenter
 import com.example.ktdemo.mvp.view.MvpView
 
@@ -14,9 +16,9 @@ class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding>(),Mv
     }
 
     override fun init() {
-        getBinding()!!.tv.setOnClickListener {
+        getBinding()!!.btnGetData.setOnClickListener {
             println("====onClick")
-            getPresenter()!!.setData("test")
+            getPresenter()!!.getTest()
         }
     }
 
@@ -24,6 +26,9 @@ class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding>(),Mv
 
     override fun <T> setData(data: T) {
         println("====$data")
+        var model: T = data
+
+        getBinding()!!.btnGetData.text = "$data"
     }
 
     override fun setError(err: String) {

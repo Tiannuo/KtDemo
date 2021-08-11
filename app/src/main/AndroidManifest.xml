@@ -2,13 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ktdemo">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KtDemo">
+        android:theme="@style/Theme.KtDemo"
+        android:name=".base.BaseApp"
+        >
         <activity
             android:name=".atc.StartActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
