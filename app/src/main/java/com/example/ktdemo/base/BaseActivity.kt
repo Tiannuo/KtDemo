@@ -7,7 +7,7 @@ import com.example.ktdemo.mvp.presenter.BasePresenter
 import com.example.ktdemo.mvp.view.BaseView
 import com.example.ktdemo.mvp.view.MvpView
 
-abstract class BaseActivity<V:BaseView, P : BasePresenter<V>, B:ViewBinding> : AppCompatActivity(), BaseView {
+abstract class BaseActivity<V:BaseView<M>, P : BasePresenter<V,M>, B:ViewBinding,M> : AppCompatActivity(), BaseView<M> {
     private var mPresenter: P? = null
     private var mBinding: B? = null
     override fun onCreate(savedInstanceState: Bundle?) {

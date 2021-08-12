@@ -2,7 +2,7 @@ package com.example.ktdemo.mvp.presenter
 
 import com.example.ktdemo.mvp.view.BaseView
 
-open class BasePresenter<V:BaseView> {
+open class BasePresenter<V:BaseView<M>,M> {
 
     private var mBaseView: V?=null
 

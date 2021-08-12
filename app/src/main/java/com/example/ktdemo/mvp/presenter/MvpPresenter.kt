@@ -7,7 +7,7 @@ import com.example.ktdemo.mvp.model.BaseModel
 import com.example.ktdemo.mvp.model.TestModel
 import com.example.ktdemo.mvp.view.MvpView
 
-class MvpPresenter : BasePresenter<MvpView>() {
+class MvpPresenter : BasePresenter<MvpView,TestModel>() {
 
     fun getTest() {
         HttpUtils.sendHttp(HttpUtils.createApi(UserApi::class.java).getTest(),

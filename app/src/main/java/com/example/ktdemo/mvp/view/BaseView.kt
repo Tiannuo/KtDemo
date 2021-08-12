@@ -1,6 +1,6 @@
 package com.example.ktdemo.mvp.view
 
-interface BaseView {
-    fun <T> setData(data: T)
+interface BaseView<M> {
+    fun setData(data: M)
     fun setError(err: String)
 }

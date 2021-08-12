@@ -7,7 +7,7 @@ import com.example.ktdemo.mvp.model.TestModel
 import com.example.ktdemo.mvp.presenter.MvpPresenter
 import com.example.ktdemo.mvp.view.MvpView
 
-class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding>(),MvpView {
+class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding,TestModel>(), MvpView {
 
     override fun createBinding(): ActivityMvpBinding? = ActivityMvpBinding.inflate(layoutInflater)
 
@@ -24,10 +24,8 @@ class MvpActivity : BaseActivity<MvpView, MvpPresenter, ActivityMvpBinding>(),Mv
 
     override fun createPresenter() = MvpPresenter()
 
-    override fun <T> setData(data: T) {
+    override fun setData(data: TestModel) {
         println("====$data")
-        var model:TestModel = data as TestModel
-
         getBinding()!!.tv.text = "$data"
     }
 

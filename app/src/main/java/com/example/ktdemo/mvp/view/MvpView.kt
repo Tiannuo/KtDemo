@@ -1,4 +1,6 @@
 package com.example.ktdemo.mvp.view
 
-interface MvpView : BaseView {
+import com.example.ktdemo.mvp.model.TestModel
+
+interface MvpView : BaseView<TestModel> {
 }
