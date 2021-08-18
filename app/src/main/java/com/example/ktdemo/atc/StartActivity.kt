@@ -14,16 +14,13 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActStartBinding.inflate(layoutInflater);
         setContentView(binding!!.root)
-        binding!!.ivStart.setOnClickListener {v->
-            onClick(v);
-        }
-
+        binding!!.btnClickCat.setOnClickListener { onClick(it) }
 
     }
 
     private fun onClick(v: View?) {
         var intent = Intent()
-        intent.setClass(this,Mvp2Activity::class.java);
+        intent.setClass(this,MvpActivity::class.java);
         startActivity(intent)
     }
 

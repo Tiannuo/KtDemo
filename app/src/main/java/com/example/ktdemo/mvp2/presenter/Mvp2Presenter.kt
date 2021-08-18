@@ -11,4 +11,6 @@ class Mvp2Presenter : BasePresenter<Mvp2View, Mvp2Model>() {
     fun setData(data: String) {
         getView()!!.setData(data)
     }
+
+    fun setDataModel(model: Mvp2Model){}
 }
